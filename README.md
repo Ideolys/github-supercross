@@ -1,12 +1,5 @@
 # Github Supercross
 
-## Stack:
-- A Phaser 3 project template
-- ES6 support via [Babel 7](https://babeljs.io/)
-- [Webpack 4](https://webpack.js.org/)
-- that includes hot-reloading for development and production-ready builds.
-- Loading images via JavaScript module `import` is also supported.
-
 ## Requirements
 
 [Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
@@ -32,3 +25,10 @@ Make sure docker is running, then you can run the following commands:
 |---------|-------------|
 | `docker-compose -f docker-compose.prod.yml up --build -d` | Create a container: Install project dependencies, Builds code bundle with production settings and run the server listening on localhost and the container port (defined on the dotenv file)  |
 | `docker-compose -f docker-compose.prod.yml down` | shutdown the container  |
+
+## Stack:
+- A Phaser 3 project template
+- ES6 support via [Babel 7](https://babeljs.io/)
+- [Webpack 4](https://webpack.js.org/)
+- that includes hot-reloading for development and production-ready builds.
+- Loading images via JavaScript module `import` is also supported.
