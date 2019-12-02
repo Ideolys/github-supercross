@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  github-supercross:
+    build: .
+    container_name: ${HOSTNAME}
+    restart: always
+    ports:
+      - "${CONTAINER_PORT}:${APP_PORT}"
+    command: "npm run start"
+    environment:
+      - VIRTUAL_HOST=${HOSTNAME}
+      - LETSENCRYPT_HOST=${HOSTNAME}
+      - LETSENCRYPT_EMAIL=${LESTENCRYPT_MAIL}
+    networks:
+      - default
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:${APP_PORT}"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  default:
+    external:
+      name: webproxy
