@@ -22,11 +22,11 @@
 
 ## Docker for production
 
-First you have to create a dotenv file and insert the env variables needed:
+First, you have to create a dotenv file and insert the env variables needed:
 ```
 $ cp .env.example .env
 ```
-Then you can run the following commands:
+Make sure docker is running, then you can run the following commands:
 
 | Command | Description |
 |---------|-------------|
