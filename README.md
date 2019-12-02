@@ -20,8 +20,15 @@
 | `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
 | `npm start` | Run the project into an http server listening on localhost:8080 |
 
-## Docker Commands
+## Docker for production
+
+First you have to create a dotenv file and insert the env variables needed:
+```
+$ cp .env.example .env
+```
+Then you can run the following commands:
 
 | Command | Description |
 |---------|-------------|
-
+| `docker-compose -f docker-compose.prod.yml up --build -d` | Create a container: Install project dependencies, Builds code bundle with production settings and run the server (listening on localhost and the container por)  |
+| `docker-compose -f docker-compose.prod.yml down` | shutdown the container  |
